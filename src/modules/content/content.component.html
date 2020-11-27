@@ -1,0 +1,29 @@
+<header>
+    <nav>
+      <h1>
+        <a routerLink="inicio" class="logo"><img class="imgRedonda" src="/assets/img/imgmini.jpg" alt=""></a>
+        
+      </h1>
+      <ul>
+        <li><a routerLink="location">Location</a></li>
+        <li><a routerLink="blog">Blog</a></li>
+        <li><a routerLink="services">Services</a></li>
+        <li><a (click)="salir()">Salir</a></li>
+      </ul>
+      <button class="toggle-menu" aria-label="Responsive Navigation Menu">☰</button>
+    </nav>
+</header>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <div class="container">
+      <div class="copyright">
+          Contactenos: (+54) 8261467  -   Email: medicalcenterveteriniaria@mci.com
+      </div>
+  </div>
+</footer>
+
+
+
+  

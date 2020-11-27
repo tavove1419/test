@@ -1,0 +1,102 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.imgRedonda {
+    width:310px;
+    height:300px;
+    border-radius:150px;
+}
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.slider {
+    text-align: center;
+    margin-top: 30%;
+}
+
+.sidenav {
+    height: 100%;
+    background-color: rgba(250, 25, 25, 0.432);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 50%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 5%;
+    padding: 60px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.login-main-text h2{
+    font-weight: bold;
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}
+
+@keyframes p-progress-spinner-color {
+    100%,
+    0% {
+        stroke: #d62d20;
+    }
+    40% {
+        stroke: #0057e7;
+    }
+    66% {
+        stroke: #008744;
+    }
+    80%,
+    90% {
+        stroke: #ffa700;
+    }
+}

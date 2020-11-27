@@ -1,0 +1,58 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<p-toast></p-toast>
+<div class="sidenav">
+    <div class="login-main-text">
+    <h2>Bienvenidos<br></h2>
+    <br>
+    <img src='assets/img/img1.jpg' class='imgRedonda' />
+    
+</div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12" *ngIf="!isLoading">
+        <div class="login-form">
+            <form [formGroup]="formLogin">
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="email" formControlName="user" class="form-control" placeholder="Email">
+                    <div *ngIf="formLogin.get('user').errors && formLogin.get('user').dirty || formLogin.get('user').touched">
+                        <small class="p-invalid" *ngIf="formLogin.get('user').hasError('required')">
+                            El correo es requerido!
+                        </small>
+                    </div>
+                    <div *ngIf="formLogin.get('user').errors">
+                        <small class="p-invalid" *ngIf="formLogin.get('user').hasError('email')">
+                            Formato de Correo no válido!
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" formControlName="pass" class="form-control" placeholder="">
+                    <div *ngIf="formLogin.get('pass').errors && formLogin.get('pass').dirty || formLogin.get('pass').touched">
+                        <small class="p-invalid" *ngIf="formLogin.get('pass').hasError('required')">
+                            La Contraseña es requerida!
+                        </small>
+                    </div>
+                </div>
+                <div>
+                    <a href="/recuperar">¿Olvidastes tu contraseña?</a>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-black" (click)="login()" [disabled]="!formLogin.valid">Ingresar</button>
+                <br>
+                <br>
+                <div>
+                    <p>AUN NO TENGO CUENTA <a href="/registrar">REGISTRARSE</a></p>
+                </div>
+                <!-- <button type="submit" class="btn btn-secondary" style="margin-left: 15px;">Register</button> -->
+            </form>
+        </div>
+    </div>
+    <div *ngIf="isLoading" class="slider">
+        <p-progressSpinner  animationDuration="1s"></p-progressSpinner>
+    </div>
+</div>
